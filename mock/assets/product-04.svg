@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Abstract geometric study in blue, cream and graphite">
+  <rect width="800" height="1000" fill="#f2eee4"/>
+  <rect x="120" y="120" width="360" height="520" fill="#2f4b63"/>
+  <rect x="300" y="420" width="380" height="300" fill="#172126"/>
+  <g fill="#b65f43">
+    <circle cx="200" cy="780" r="18"/>
+    <circle cx="260" cy="780" r="18"/>
+    <circle cx="320" cy="780" r="18"/>
+    <circle cx="380" cy="780" r="18"/>
+  </g>
+  <path d="M120 690H680" stroke="#172126" stroke-width="6"/>
+  <circle cx="640" cy="200" r="70" fill="none" stroke="#2f4b63" stroke-width="8"/>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" role="img" aria-labelledby="title desc">
+  <title id="title">Angular storefront architecture</title>
+  <desc id="desc">Source-level diagram of an Angular 14 storefront, Firebase Authentication and Realtime Database, an Express API, Stripe Checkout and Nodemailer. It is a documentation diagram, not a runtime capture.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#38454a"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8a9498"/>
+    </marker>
+    <style>
+      .bg { fill: #f6f3ec; }
+      .panel { fill: #fffdf8; stroke: #d7d0c2; stroke-width: 1.5; }
+      .panel-dark { fill: #172126; stroke: #172126; }
+      .accent { fill: #1f5f5b; }
+      .rule { stroke: #d7d0c2; stroke-width: 1; }
+      .arrow { stroke: #38454a; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .arrow-muted { stroke: #8a9498; stroke-width: 1.5; stroke-dasharray: 7 6; fill: none; marker-end: url(#arrow-muted); }
+      .title { fill: #172126; font: 700 30px Arial, Helvetica, sans-serif; letter-spacing: -0.3px; }
+      .subtitle { fill: #5f6b70; font: 400 16px Arial, Helvetica, sans-serif; }
+      .h { fill: #172126; font: 700 18px Arial, Helvetica, sans-serif; }
+      .body { fill: #38454a; font: 400 14px Arial, Helvetica, sans-serif; }
+      .small { fill: #5f6b70; font: 400 12px Arial, Helvetica, sans-serif; }
+      .label { fill: #1f5f5b; font: 700 11px Arial, Helvetica, sans-serif; letter-spacing: 1.2px; }
+      .white { fill: #fffdf8; }
+      .white-body { fill: #dfe8e6; font: 400 13px Arial, Helvetica, sans-serif; }
+      .num { fill: #1f5f5b; font: 700 13px Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1400" height="880"/>
+  <text class="title" x="60" y="62">Angular storefront architecture</text>
+  <text class="subtitle" x="60" y="91">Source-level reconstruction of the academic migration. Not a runtime capture and not evidence of production deployment.</text>
+  <line class="rule" x1="60" y1="112" x2="1340" y2="112"/>
+
+  <text class="label" x="70" y="154">BROWSER</text>
+  <rect class="panel" x="60" y="170" width="370" height="300" rx="8"/>
+  <text class="h" x="84" y="205">Angular 14 SPA</text>
+  <text class="body" x="84" y="231">Public routes</text>
+  <text class="small" x="84" y="253">Catalogue, product, cart, wishlist, checkout return</text>
+  <text class="body" x="84" y="285">Authenticated routes</text>
+  <text class="small" x="84" y="307">Order history and wishlist with GuardService</text>
+  <text class="body" x="84" y="339">Admin routes</text>
+  <text class="small" x="84" y="361">Product list, product editor, orders</text>
+  <text class="small" x="84" y="383">Guarded by GuardService and AdminGuardService</text>
+  <rect class="panel" x="84" y="405" width="322" height="44" rx="4"/>
+  <text class="small" x="98" y="424">Angular Material / CDK components</text>
+  <text class="small" x="98" y="440">Tailwind utility styling</text>
+
+  <text class="label" x="500" y="154">FIREBASE</text>
+  <rect class="panel" x="490" y="170" width="370" height="300" rx="8"/>
+  <text class="h" x="514" y="205">Firebase services</text>
+  <rect class="panel" x="514" y="224" width="322" height="86" rx="4"/>
+  <text class="body" x="528" y="250">Authentication</text>
+  <text class="small" x="528" y="271">Email, Google and Facebook providers documented</text>
+  <text class="small" x="528" y="290">Provider setup not inspected</text>
+  <rect class="panel" x="514" y="326" width="322" height="118" rx="4"/>
+  <text class="body" x="528" y="352">Realtime Database</text>
+  <text class="small" x="528" y="373">Products, orders, user profiles</text>
+  <text class="small" x="528" y="392">Cart and wishlist records</text>
+  <text class="small" x="528" y="411">Rules and access control not inspected</text>
+
+  <text class="label" x="930" y="154">SERVER</text>
+  <rect class="panel" x="920" y="170" width="420" height="300" rx="8"/>
+  <text class="h" x="944" y="205">Express 4 API</text>
+  <text class="body" x="944" y="233">Payment route</text>
+  <text class="small" x="944" y="254">Creates a Stripe Checkout session</text>
+  <text class="body" x="944" y="286">Email route</text>
+  <text class="small" x="944" y="307">Sends transactional messages</text>
+  <text class="body" x="944" y="339">Runtime status</text>
+  <text class="small" x="944" y="360">Not started during this review</text>
+  <text class="small" x="944" y="381">No payment or email call was made</text>
+  <rect class="panel" x="944" y="405" width="372" height="44" rx="4"/>
+  <text class="small" x="958" y="424">Dependencies: express 4.18, stripe 10.17,</text>
+  <text class="small" x="958" y="440">nodemailer 6.9, firebase-admin 12 (role not audited)</text>
+
+  <text class="label" x="930" y="540">EXTERNAL SERVICES</text>
+  <rect class="panel" x="920" y="556" width="420" height="170" rx="8"/>
+  <text class="h" x="944" y="591">Stripe Checkout</text>
+  <text class="small" x="944" y="613">Hosted payment page; no live call made</text>
+  <line class="rule" x1="944" y1="632" x2="1316" y2="632"/>
+  <text class="h" x="944" y="661">SMTP / Nodemailer</text>
+  <text class="small" x="944" y="683">Transactional email transport; not executed</text>
+
+  <text class="label" x="500" y="540">CONTROL PLANE</text>
+  <rect class="panel" x="490" y="556" width="370" height="170" rx="8"/>
+  <text class="h" x="514" y="591">Route guards</text>
+  <text class="small" x="514" y="614">GuardService checks authentication</text>
+  <text class="small" x="514" y="635">AdminGuardService checks administrator role</text>
+  <text class="small" x="514" y="656">Guard logic exists in source; no session was created</text>
+
+  <path class="arrow" d="M430 300 C455 300 465 300 490 300"/>
+  <path class="arrow" d="M860 300 C885 300 895 300 920 300"/>
+  <path class="arrow" d="M1130 470 L1130 556"/>
+
+  <text class="small" x="438" y="288">auth + data</text>
+  <text class="small" x="870" y="288">API calls</text>
+  <text class="small" x="1140" y="514">server call</text>
+
+  <line class="rule" x1="60" y1="760" x2="1340" y2="760"/>
+  <text class="small" x="60" y="790">Evidence: `package.json`, `src/app/app-routing.module.ts`, `src/app/app.module.ts`, models, services and the upstream README.</text>
+  <text class="small" x="60" y="810">The diagram is a documentation explanation. It does not prove that any route, payment, email or database operation worked at runtime.</text>
+  <text class="small" x="60" y="830">Firebase Admin SDK is declared in `server/package.json`; its exact server role was not audited.</text>
+  <text class="small" x="60" y="850">No credentials, customer data or production configuration appear in this diagram.</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+  <title id="title">WordPress and WooCommerce storefront evidence</title>
+  <desc id="desc">Diagram of the historical WordPress and WooCommerce storefront stack reconstructed from a local full-site backup. Third-party themes and plugins are shown separately from custom work. The database and customer records were not opened.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#38454a"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8a9498"/>
+    </marker>
+    <style>
+      .bg { fill: #f6f3ec; }
+      .panel { fill: #fffdf8; stroke: #d7d0c2; stroke-width: 1.5; }
+      .rule { stroke: #d7d0c2; stroke-width: 1; }
+      .arrow { stroke: #38454a; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .arrow-muted { stroke: #8a9498; stroke-width: 1.5; stroke-dasharray: 7 6; fill: none; marker-end: url(#arrow-muted); }
+      .title { fill: #172126; font: 700 30px Arial, Helvetica, sans-serif; letter-spacing: -0.3px; }
+      .subtitle { fill: #5f6b70; font: 400 16px Arial, Helvetica, sans-serif; }
+      .h { fill: #172126; font: 700 18px Arial, Helvetica, sans-serif; }
+      .body { fill: #38454a; font: 400 14px Arial, Helvetica, sans-serif; }
+      .small { fill: #5f6b70; font: 400 12px Arial, Helvetica, sans-serif; }
+      .label { fill: #1f5f5b; font: 700 11px Arial, Helvetica, sans-serif; letter-spacing: 1.2px; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1400" height="800"/>
+  <text class="title" x="60" y="62">WordPress / WooCommerce storefront evidence</text>
+  <text class="subtitle" x="60" y="91">Historical stack reconstructed from a local full-site backup. The database, orders, logs and customer content were not opened.</text>
+  <line class="rule" x1="60" y1="112" x2="1340" y2="112"/>
+
+  <text class="label" x="70" y="154">STOREFRONT</text>
+  <rect class="panel" x="60" y="170" width="390" height="250" rx="8"/>
+  <text class="h" x="84" y="205">WordPress 6.6.2</text>
+  <text class="body" x="84" y="233">Astra 4.0.1 theme</text>
+  <text class="small" x="84" y="254">No custom child theme found in the inspected tree</text>
+  <text class="body" x="84" y="286">Elementor and Elementor Pro</text>
+  <text class="small" x="84" y="307">Page composition; exact pages not audited</text>
+  <text class="body" x="84" y="339">Media library</text>
+  <text class="small" x="84" y="360">Product and brand files under uploads, 2022-2024</text>
+  <text class="small" x="84" y="381">No image rights verified</text>
+
+  <text class="label" x="510" y="154">COMMERCE</text>
+  <rect class="panel" x="490" y="170" width="390" height="250" rx="8"/>
+  <text class="h" x="514" y="205">WooCommerce 9.2.3</text>
+  <text class="body" x="514" y="233">Catalogue and orders</text>
+  <text class="small" x="514" y="254">Order records not inspected</text>
+  <text class="body" x="514" y="286">Payments</text>
+  <text class="small" x="514" y="307">WooCommerce Payments; WooCommerce PayPal Payments</text>
+  <text class="body" x="514" y="339">Fulfilment and storefront plugins</text>
+  <text class="small" x="514" y="360">Bulk editor, size chart, image flipper, media deduper</text>
+  <text class="small" x="514" y="381">Third-party components; not custom code</text>
+
+  <text class="label" x="930" y="154">INTEGRATIONS</text>
+  <rect class="panel" x="920" y="170" width="420" height="250" rx="8"/>
+  <text class="h" x="944" y="205">Marketing and feeds</text>
+  <text class="small" x="944" y="230">Google Listings and Ads</text>
+  <text class="small" x="944" y="250">Pinterest for WooCommerce</text>
+  <text class="small" x="944" y="270">Facebook for WooCommerce</text>
+  <text class="small" x="944" y="290">MailPoet email marketing</text>
+  <text class="small" x="944" y="310">Woo Product Feed Pro</text>
+  <line class="rule" x1="944" y1="330" x2="1316" y2="330"/>
+  <text class="body" x="944" y="358">Infrastructure and security</text>
+  <text class="small" x="944" y="380">SiteGround Optimizer, SG Security</text>
+  <text class="small" x="944" y="400">All-in-One WP Migration</text>
+
+  <text class="label" x="70" y="500">PERSISTENCE</text>
+  <rect class="panel" x="60" y="516" width="390" height="130" rx="8"/>
+  <text class="h" x="84" y="551">MySQL database</text>
+  <text class="small" x="84" y="576">Referenced by the WordPress stack; not opened</text>
+  <text class="small" x="84" y="598">Orders, customers and reviews remain unreviewed</text>
+  <text class="small" x="84" y="620">No database content appears in this case study</text>
+
+  <text class="label" x="510" y="500">ARCHIVE</text>
+  <rect class="panel" x="490" y="516" width="390" height="130" rx="8"/>
+  <text class="h" x="514" y="551">AI1WM archive</text>
+  <text class="small" x="514" y="576">Full-site migration archive dated 2023-08-28</text>
+  <text class="small" x="514" y="598">Inventoried by filename only</text>
+  <text class="small" x="514" y="620">Not opened or published</text>
+
+  <text class="label" x="930" y="500">EVIDENCE BOUNDARY</text>
+  <rect class="panel" x="920" y="516" width="420" height="130" rx="8"/>
+  <text class="h" x="944" y="551">What this diagram proves</text>
+  <text class="small" x="944" y="576">A configured storefront stack existed in the backup</text>
+  <text class="small" x="944" y="598">Uploads and logs indicate activity in 2022-2024</text>
+  <text class="small" x="944" y="620">It does not prove sales, revenue or current operation</text>
+
+  <path class="arrow" d="M450 280 L490 280"/>
+  <path class="arrow" d="M880 280 L920 280"/>
+  <path class="arrow-muted" d="M255 420 L255 516"/>
+  <path class="arrow-muted" d="M685 420 L685 516"/>
+  <path class="arrow-muted" d="M1130 420 L1130 516"/>
+
+  <text class="small" x="458" y="268">catalogue</text>
+  <text class="small" x="888" y="268">plugins</text>
+  <text class="small" x="265" y="482">runtime data</text>
+  <text class="small" x="695" y="482">backup</text>
+  <text class="small" x="1140" y="482">limits</text>
+
+  <line class="rule" x1="60" y1="700" x2="1340" y2="700"/>
+  <text class="small" x="60" y="730">Evidence: WordPress, WooCommerce and theme version files; plugin directory names; uploads inventory; log filenames; AI1WM archive metadata.</text>
+  <text class="small" x="60" y="750">The diagram separates third-party platform components from the store operation. It does not attribute theme, plugin or payment code to the author.</text>
+  <text class="small" x="60" y="770">No database, order, customer, review or payment content is represented. Ownership of the domain, brand and media still requires confirmation.</text>
+</svg>

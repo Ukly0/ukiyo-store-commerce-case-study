@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Abstract geometric study in navy, rust and warm beige">
+  <rect width="800" height="1000" fill="#e7ddcb"/>
+  <path d="M120 780L400 220L680 780Z" fill="#172126"/>
+  <path d="M260 780L400 460L540 780Z" fill="#b65f43"/>
+  <circle cx="400" cy="780" r="180" fill="#1f5f5b" opacity="0.92"/>
+  <path d="M80 140H720" stroke="#172126" stroke-width="3"/>
+  <path d="M80 190H420" stroke="#172126" stroke-width="3"/>
+  <circle cx="650" cy="150" r="18" fill="#b65f43"/>
+</svg>
