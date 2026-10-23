@@ -1,12 +1,10 @@
 # Ukiyo Store commerce case study
 
-A documentation-only study of two stages of an apparel storefront: a historical WordPress/WooCommerce archive from 2022-2024 and an Angular final-degree migration from 2023-2024. It describes the architecture visible in the sources and separates source-level implementation from runtime validation.
+A documentation-only study of an apparel storefront across two stages: a WordPress/WooCommerce storefront archived from 2022-2024 and an Angular final-degree migration from 2023-2024. It describes the structure visible in the sources and separates source-level implementation from runtime validation.
 
-> Interface mock — synthetic data; not a screenshot of the original store.
+![Ukiyo Store project cover](docs/images/ukiyo-store-cover.png)
 
-![Catalogue mock](docs/images/mock-catalog.png)
-
-*Desktop catalogue mock. The geometric artwork is original and does not represent the store's interface.*
+*Project cover. It presents the two stages; it is a portfolio composition, not an interface capture.*
 
 ## At a glance
 
@@ -16,6 +14,7 @@ A documentation-only study of two stages of an apparel storefront: a historical 
 | Nature | Configured WordPress/WooCommerce storefront archive | Final-degree software migration |
 | Runtime | Not verified live | Not deployed or executed in this review |
 | Core | WordPress, WooCommerce, Astra, Elementor | Angular, Firebase, Express, Stripe |
+| Visuals | Portfolio recreation with public-domain art | Portfolio recreations with public-domain art |
 
 ## Historical storefront archive
 
@@ -35,6 +34,28 @@ The archive contains a configured WordPress 6.6.2 and WooCommerce 9.2.3 storefro
 The Angular application is a single-page storefront with Firebase Authentication and Realtime Database, an Express API for checkout and email, Stripe Checkout, and route guards for customer and administrator areas.
 
 The migration is observable in structure only: routes, models, services, package files and the upstream README. No end-to-end migration procedure is claimed.
+
+## Visuals
+
+The images below are portfolio recreations prepared for this case study. They are not raw captures of the live store. The printed artwork is public-domain ukiyo-e; the browser and device frames are illustrative. Raw captures containing third-party character artwork are intentionally excluded.
+
+### WordPress/WooCommerce storefront
+
+![WordPress storefront recreation](docs/images/store-wordpress.png)
+
+*Storefront recreation. Public-domain ukiyo-e artwork; illustrative browser frame; not a live capture.*
+
+### Angular catalogue
+
+![Angular catalogue recreation](docs/images/store-angular-catalog.png)
+
+*Catalogue recreation. Public-domain ukiyo-e artwork; not a live capture.*
+
+### Angular product detail
+
+![Angular product detail recreation](docs/images/store-angular-product.png)
+
+*Product detail recreation. Public-domain ukiyo-e artwork; not a live capture.*
 
 ## Source-level features
 
@@ -59,26 +80,6 @@ The table records code presence, not a working product. No route, build, test, p
 | Application services | Firebase 9.9, AngularFire 7.4, Express 4.18, Stripe 10.17, Nodemailer 6.9 | Server and client split |
 | Historical storefront | WordPress 6.6.2, WooCommerce 9.2.3, Astra 4.0.1, Elementor | Archive snapshot, not current |
 
-## Gallery
-
-![Product mock](docs/images/mock-product.png)
-
-*Mock product detail. Synthetic product, price and artwork.*
-
-![Cart mock](docs/images/mock-cart.png)
-
-*Mock cart. Checkout is disabled and no order is created.*
-
-![Catalogue mock, mobile](docs/images/mock-catalog-mobile.png)
-
-*Mock catalogue section at mobile width. Synthetic products and original geometric artwork.*
-
-## Open the mock
-
-Open `mock/catalog.html` directly in a browser. No build step or server is required.
-
-The mock has catalogue, product and cart pages, system fonts, local SVG artwork and no external requests. The checkout button is disabled.
-
 ## Dates and origin
 
 - 2022-09: first storefront media in the archive.
@@ -89,13 +90,29 @@ The mock has catalogue, product and cart pages, system fonts, local SVG artwork 
 
 Dates describe evidence, not employment periods.
 
+## Visual provenance
+
+The published mockups use public-domain ukiyo-e works from Wikimedia Commons:
+
+| Design | Author | Work |
+|---|---|---|
+| Great Wave off Kanagawa | Hokusai | *Thirty-six Views of Mount Fuji* (1831) |
+| Red Fuji | Hokusai | *Fine Wind, Clear Morning* (1831) |
+| Sudden Shower over Shin-Ohashi Bridge | Hiroshige | *One Hundred Famous Views of Edo* (1857) |
+| Plum Garden at Kameido | Hiroshige | *One Hundred Famous Views of Edo* (1857) |
+| Mishima Pass in Kai Province | Hokusai | *Thirty-six Views of Mount Fuji* (1831) |
+| Storm below the summit | Hokusai | *Thirty-six Views of Mount Fuji* (1831) |
+
+The t-shirt base is the project's own mockup; the printed artwork was substituted with these public-domain works. The WordPress and Angular names are third-party platforms; their themes, plugins and frameworks are not claimed as original work.
+
 ## Limitations and attribution
 
 - The Angular project is academic and was not verified in production.
 - The historical stage is a WordPress/WooCommerce archive, not a custom CMS or checkout implementation.
 - No sales, revenue, conversion, customer or traffic claim is made.
-- The interface images are original mocks, not the store's original UI or product photography.
+- The interface images are portfolio recreations, not the store's original UI or product photography.
+- Raw captures containing third-party character artwork are not published.
 - No live URL, deployment or runtime test was available for this review.
-- This repository contains documentation and an original synthetic mock, not the legacy application's source code. No licence for reuse is granted.
+- This repository contains documentation and portfolio visuals, not the legacy application's source code. No licence for reuse is granted.
 
 Technical details are in `docs/technical-notes.md`.

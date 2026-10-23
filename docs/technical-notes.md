@@ -1,6 +1,6 @@
 # Technical notes
 
-Engineering notes for the Ukiyo Store commerce case study. This document describes the observable source structure and the static mock. It is not a runtime report.
+Engineering notes for the Ukiyo Store commerce case study. This document describes the observable source structure and the published visual assets. It is not a runtime report.
 
 ## Source boundary
 
@@ -94,28 +94,33 @@ Angular 14 and this toolchain are legacy in 2026. The versions are a historical 
 
 The archive is a historical storefront record. It does not establish sales, revenue, customer counts or current operation.
 
-## Mock implementation
+## Visual assets
 
-- Static HTML, CSS and JavaScript only.
-- Fictional label `NORTHLINE`.
-- Original geometric SVG artwork in `mock/assets/`.
-- System font stack; no remote fonts, scripts, images or analytics.
-- Catalogue filters and add-to-cart are local UI state only.
-- Checkout is disabled; no payment, email or database call is made.
-- The mock is labelled as synthetic on every page.
+The repository publishes four PNG files in `docs/images/`:
+
+| File | Size | Content |
+|---|---|---|
+| `ukiyo-store-cover.png` | 1200x630 | Project cover with the two stages |
+| `store-wordpress.png` | 1440x900 | WordPress/WooCommerce storefront composition |
+| `store-angular-catalog.png` | 1440x900 | Angular catalogue composition |
+| `store-angular-product.png` | 1440x900 | Angular product-detail composition |
+
+The three interface images are portfolio recreations prepared from the project's mockup assets. Browser and device frames are illustrative. The cover is a project composition, not an interface capture.
+
+The printed artwork is public-domain ukiyo-e sourced from Wikimedia Commons: Hokusai's *Great Wave off Kanagawa*, *Red Fuji*, *Mishima Pass in Kai Province* and *Storm below the summit*; Hiroshige's *Sudden Shower over Shin-Ohashi Bridge* and *Plum Garden at Kameido*. The t-shirt base comes from the project's own mockup.
+
+Raw captures containing third-party character artwork are not published. The repository does not include the WordPress database, orders, customer records, logs or original product photography.
 
 ## Validation
 
-- All three mock HTML pages parsed with Python `html.parser`.
-- Both architecture SVGs parsed as valid XML.
-- No external references were found in mock HTML, CSS or JavaScript.
-- Local Playwright run: 10, 4 and 5 file requests for catalogue, product and cart; 0 external requests; 0 console errors.
-- Screenshots captured from local files with the Chromium executable already present in the local Playwright cache.
+- The four PNG files open and report the expected dimensions.
+- Both architecture SVGs parse as valid XML.
+- The README image paths resolve to files in `docs/images/`.
 - Angular build, tests, Express server, Stripe, Firebase, SMTP and WordPress restore were not run.
 
 ## Evidence limits
 
-- The mock does not demonstrate the original frontend or its visual fidelity.
+- The visual recreations do not demonstrate the original frontend or its visual fidelity.
 - Source-level features are not runtime-validated.
 - The historical archive does not prove commercial performance.
 - The case study does not include customer data, orders or original brand assets.
