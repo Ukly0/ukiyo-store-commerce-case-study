@@ -6,7 +6,7 @@ Engineering notes for the Ukiyo Store commerce case study. This document describ
 
 - The Angular project was reviewed read-only through source files: routes, modules, models, selected services, package files and the repository tree.
 - The initial WordPress archive review inspected structure, version files, plugin directories, media inventory and log filenames without opening customer records or log content. A separate September recovery session records a full-site database import; that database is not included here.
-- This update reconciles that recovery session with retained portfolio assets. No deployment, build or runtime test was rerun. See [Recovery and improvements](recovery-and-improvements.md).
+- This update reconciles that recovery session with retained portfolio assets and freshly captures the locally adapted Angular catalogue/product pages. No production deployment or backend flow was tested. See [Recovery and improvements](recovery-and-improvements.md).
 
 ## Angular architecture
 
@@ -96,32 +96,38 @@ The archive is a historical storefront record. It does not establish sales, reve
 
 ## Visual assets
 
-The repository publishes five PNG files in `docs/images/`:
+The current gallery replaces the older synthetic interface recreations:
 
 | File | Size | Content |
 |---|---|---|
-| `ukiyo-store-cover.png` | 1200x630 | Project cover with the two stages |
-| `store-wordpress.png` | 1440x900 | WordPress/WooCommerce storefront composition |
-| `store-angular-catalog.png` | 1440x900 | Angular catalogue composition |
-| `store-angular-product.png` | 1440x900 | Angular product-detail composition |
+| `ukiyo-store-cover.png` | 1200x750 | Reduced recovered-homepage composition |
+| `store-wordpress.png` | 3200x2000 | Latest retained restored catalogue composition |
+| `store-angular-catalog.png` | 2880x2800 | Fresh local Angular catalogue capture at 2x |
+| `store-angular-product.png` | 2880x2000 | Fresh local Angular product capture at 2x |
 | `wordpress-responsive-hero.png` | 3200x2000 | Original locally restored homepage in illustrative desktop/mobile frames |
+| `wordpress-responsive-categorias.png` | 3200x2000 | Restored category navigation composition |
+| `wordpress-responsive-coleccion.png` | 3200x2000 | Restored collection composition |
+| `wordpress-responsive-productos.png` | 3200x2000 | Restored product section composition |
+| `wordpress-responsive-marca.png` | 3200x2000 | Restored brand section composition |
 
-The three `store-*.png` interface images are portfolio recreations prepared from the project's mockup assets. The responsive hero instead contains captures of the original locally restored interface. Browser and device frames are illustrative in both cases. The cover is a project composition, not an interface capture.
+WordPress compositions were copied from the latest responsive assets retained on the external disk. They contain real captures of the recovered interface in illustrative browser/device frames. Docker was not started again for this update. The mobile catalogue composition exposes horizontal clipping; these assets are not evidence of flawless responsive behaviour.
 
-The printed artwork is public-domain ukiyo-e sourced from Wikimedia Commons: Hokusai's *Great Wave off Kanagawa*, *Red Fuji*, *Mishima Pass in Kai Province* and *Storm below the summit*; Hiroshige's *Sudden Shower over Shin-Ohashi Bridge* and *Plum Garden at Kameido*. The t-shirt base comes from the project's own mockup.
+Angular captures were generated on 25 October 2026 with Chrome headless, at a 1440px CSS viewport width and device scale factor 2, against the development server on localhost port 4201. The catalogue viewport is 1400px tall and the product viewport is 1000px tall. Fonts and visible images were allowed to load before capture. The pages rendered 74 catalogue cards and the product `541` (Japanese Shirt 'Newspaper'), with no unloaded/broken images visible in either capture.
 
-Raw captures containing third-party character artwork are not published. The repository does not include the WordPress database, orders, customer records, logs or a product-photography collection. The responsive hero includes historical storefront fashion photography, not public-domain artwork; no reuse rights are granted.
+The locally modified product service reads `PRODUCTS` from a local catalogue module, including product media recovered from the WordPress backup. These are not the former six-product public-domain-art mockups, and not a live Firebase connection. The application source and its existing local changes were not edited or committed by this gallery update.
+
+The screenshots include historical fashion photography, product prints and third-party characters. No public-domain status or licence to reuse those materials is claimed. Database dumps, credentials, orders, customer records and logs remain excluded.
 
 ## Validation
 
 - The published PNG files are checked for valid headers and expected dimensions when updating the documentation.
 - Both architecture SVGs parse as valid XML.
 - The README image paths resolve to files in `docs/images/`.
-- Angular build, tests, Express server, Stripe, Firebase and SMTP were not run in this documentation update. The WordPress restore is a historical session record, not a fresh execution.
+- Angular development compilation and catalogue/product rendering were exercised for the fresh captures. No unit tests, production build, Express, Stripe, Firebase authentication, SMTP or checkout flow was validated. The WordPress restore is a historical session record, not a fresh execution.
 
 ## Evidence limits
 
-- The visual recreations do not demonstrate the original frontend or its visual fidelity; the restored hero is separately identified as an original-interface capture in a composition.
-- Source-level features are not runtime-validated.
+- WordPress compositions reflect a historical local restoration; Angular captures reflect a locally adapted frontend, not the unchanged upstream repository.
+- Source-level backend features remain unvalidated; displaying 74 cards does not validate all product images, variants or interactions.
 - The historical archive does not prove commercial performance.
-- The case study does not include customer data or orders. Store branding and historical photography visible in the recovered hero are presentation evidence only, not reusable asset downloads.
+- The case study does not include customer data or orders. Store branding, historical photography and product artwork visible in the gallery are presentation evidence only, not reusable asset downloads.

@@ -6,7 +6,7 @@ The story also includes a September 2026 local recovery: restoring the original 
 
 ![Ukiyo Store project cover](docs/images/ukiyo-store-cover.png)
 
-*Project cover. It presents the two stages; it is a portfolio composition, not an interface capture.*
+*Updated project cover, based on the recovered WordPress homepage in illustrative desktop/mobile frames.*
 
 ## At a glance
 
@@ -14,9 +14,9 @@ The story also includes a September 2026 local recovery: restoring the original 
 |---|---|---|
 | Period | 2022-2024 | 2023-2024 |
 | Nature | Configured WordPress/WooCommerce storefront archive | Final-degree software migration |
-| Runtime | Local restore recorded in September 2026; no current public deployment verified | Source review only; no end-to-end validation |
+| Runtime | Local restore recorded in September 2026; no current public deployment verified | Local catalogue and product pages captured in October 2026; backend flows not validated |
 | Core | WordPress, WooCommerce, Astra, Elementor | Angular, Firebase, Express, Stripe |
-| Visuals | Restored homepage capture in a responsive composition, plus a labelled recreation | Portfolio recreations with public-domain art |
+| Visuals | Recovered interface in responsive desktop/mobile compositions | Fresh captures of the locally adapted Angular frontend |
 
 ## Historical storefront archive
 
@@ -35,7 +35,7 @@ The archive contains a configured WordPress 6.6.2 and WooCommerce 9.2.3 storefro
 
 The Angular application is a single-page storefront with Firebase Authentication and Realtime Database, an Express API for checkout and email, Stripe Checkout, and route guards for customer and administrator areas.
 
-The migration is observable in structure only: routes, models, services, package files and the upstream README. No end-to-end migration procedure is claimed.
+The historical migration is visible in routes, models, services and package files. The local frontend has since been adapted to read a local catalogue and product images rather than depend on the unavailable Firebase catalogue. The screenshots below show that adapted frontend, not an end-to-end production migration.
 
 ## Visuals
 
@@ -47,33 +47,41 @@ The migration is observable in structure only: routes, models, services, package
 
 The recovery brought back the Astra/Elementor homepage, including the “BE JAPAN” hero, navigation and original black-and-white identity. The local catalogue was subsequently refined with consistent image proportions, shorter titles, simpler actions and more regular spacing. These are presentation changes, not a claim of improved sales or performance. See the [recovery record and evidence limits](docs/recovery-and-improvements.md).
 
-### Illustrative portfolio recreations
+### WordPress catalogue — refined presentation
 
-The three images below remain labelled recreations, not captures of the restored interface. Their printed artwork is public-domain ukiyo-e; browser frames are illustrative. Raw captures containing third-party character artwork are intentionally excluded.
+![Recovered WordPress catalogue with uniform product cards, shown on desktop and mobile](docs/images/store-wordpress.png)
 
-### WordPress/WooCommerce storefront
+*Latest retained catalogue composition from the local restoration. Original product imagery; illustrative device frames. The mobile capture also exposes the existing horizontal clipping; this is not a responsive-quality certification.*
 
-![WordPress storefront recreation](docs/images/store-wordpress.png)
+### WordPress sections
 
-*Storefront recreation. Public-domain ukiyo-e artwork; illustrative browser frame; not a live capture.*
+| Categories | Collection |
+|---|---|
+| ![Recovered category navigation](docs/images/wordpress-responsive-categorias.png) | ![Recovered collection section](docs/images/wordpress-responsive-coleccion.png) |
+
+| Products | Brand |
+|---|---|
+| ![Recovered product section](docs/images/wordpress-responsive-productos.png) | ![Recovered brand section](docs/images/wordpress-responsive-marca.png) |
+
+*Original locally restored interface in illustrative frames, replacing the older standalone recreations. Historical photography and product artwork are not licensed for reuse.*
 
 ### Angular catalogue
 
-![Angular catalogue recreation](docs/images/store-angular-catalog.png)
+![Current local Angular catalogue with actual rendered product cards](docs/images/store-angular-catalog.png)
 
-*Catalogue recreation. Public-domain ukiyo-e artwork; not a live capture.*
+*Fresh browser capture of the locally adapted Angular catalogue, taken on 25 October 2026. The frontend reads local catalogue data and product media; it is not connected to a working production backend.*
 
 ### Angular product detail
 
-![Angular product detail recreation](docs/images/store-angular-product.png)
+![Current local Angular product detail](docs/images/store-angular-product.png)
 
-*Product detail recreation. Public-domain ukiyo-e artwork; not a live capture.*
+*Fresh browser capture of a local product page, taken on 25 October 2026. Displaying product data does not validate cart persistence, authentication or checkout.*
 
 ## Source-level features
 
 | Capability | Source evidence | Runtime status |
 |---|---|---|
-| Catalogue and product detail | `home` and `product/:key` routes; product service and model | Implemented in source; not tested |
+| Catalogue and product detail | `home` and `product/:key` routes; product service and model | Local-data catalogue and one product page rendered for fresh captures; backend not validated |
 | Filters and category browsing | Home components and category service | Implemented in source; not tested |
 | Cart | `cart` route; cart service and model | Implemented in source; not tested |
 | Wishlist | `wishlist` route; wishlist service; auth guard | Implemented in source; not tested |
@@ -82,7 +90,7 @@ The three images below remain labelled recreations, not captures of the restored
 | Order history and admin orders | `orders` and `adminorders` routes; order service | Implemented in source; not tested |
 | Checkout return and email | Success route with session id; Express and Nodemailer packages | Implemented in source; not executed |
 
-The table records the Angular source review, not a working product. It does not validate routes, builds, tests, payments or email. The separately recorded WordPress restoration does not validate the Angular application.
+The table records the original Angular source review, not a fully validated product. The later local screenshot pass verifies catalogue/product rendering only; payments, authentication, order persistence and email remain unvalidated.
 
 ## Stack
 
@@ -100,33 +108,24 @@ The table records the Angular source review, not a working product. It does not 
 - 2024-06: final-degree delivery.
 - 2025-09: documentation update in the source repository.
 - 2026-09-18: local WordPress restoration, catalogue presentation changes and responsive compositions recorded in the recovery session.
-- 2026-10-25: recovery evidence reconciled with this case study; restored homepage composition added.
+- 2026-10-25: gallery refreshed with the retained WordPress responsive compositions and fresh local Angular catalogue/product captures; synthetic interface images replaced.
 
 Dates describe evidence, not employment periods.
 
 ## Visual provenance
 
-The published mockups use public-domain ukiyo-e works from Wikimedia Commons:
+The current gallery replaces the older synthetic portfolio recreations. WordPress compositions come from the retained September 2026 recovery assets; Angular images are fresh captures of the locally modified frontend. Desktop/mobile frames and the cover layout are presentation devices, not application features.
 
-| Design | Author | Work |
-|---|---|---|
-| Great Wave off Kanagawa | Hokusai | *Thirty-six Views of Mount Fuji* (1831) |
-| Red Fuji | Hokusai | *Fine Wind, Clear Morning* (1831) |
-| Sudden Shower over Shin-Ohashi Bridge | Hiroshige | *One Hundred Famous Views of Edo* (1857) |
-| Plum Garden at Kameido | Hiroshige | *One Hundred Famous Views of Edo* (1857) |
-| Mishima Pass in Kai Province | Hokusai | *Thirty-six Views of Mount Fuji* (1831) |
-| Storm below the summit | Hokusai | *Thirty-six Views of Mount Fuji* (1831) |
-
-The t-shirt base is the project's own mockup; the printed artwork was substituted with these public-domain works. The WordPress and Angular names are third-party platforms; their themes, plugins and frameworks are not claimed as original work.
+Historical fashion photography, product prints and third-party characters visible in the interfaces remain the property of their respective rights holders. They are shown as contextual project evidence, not as original artwork by the author or reusable asset downloads. No licence for their reuse is granted. The WordPress and Angular names, themes, plugins and frameworks are also third-party work.
 
 ## Limitations and attribution
 
 - The Angular project is academic and was not verified in production.
 - The historical stage is a WordPress/WooCommerce archive, not a custom CMS or checkout implementation.
 - No sales, revenue, conversion, customer or traffic claim is made.
-- The restored homepage composition shows the original interface; the other three interface images are explicitly labelled portfolio recreations.
-- Raw captures containing third-party character artwork are not published.
-- The historical local restore is documented from the recovery session and retained assets; it has not been rerun for this update. No current public deployment, checkout or payment flow is verified.
+- WordPress compositions show the locally restored interface; Angular captures show a local-data adaptation, not the unchanged upstream application.
+- Product artwork visible in the gallery is third-party material; publication of screenshots grants no reuse rights.
+- The historical WordPress restore has not been rerun for this update. Angular catalogue and product rendering were checked locally, not production deployment, checkout or payment flows.
 - This repository contains documentation and portfolio visuals, not the legacy application's source code. No licence for reuse is granted.
 
 Technical details are in `docs/technical-notes.md`.

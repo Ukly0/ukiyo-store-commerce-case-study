@@ -38,15 +38,21 @@ These were local presentation changes, not a production rollout. The final sessi
 
 The retained external-disk assets contain responsive compositions for the hero, catalogue, categories, collection, products and brand sections. The revised direction replaced technology chips and decorative statistics with a quieter composition: black brand background, Japanese typography motif, white logo, yellow underline and desktop/mobile views of the same section.
 
-The published [responsive homepage composition](images/wordpress-responsive-hero.png) uses captures of the recovered interface inside illustrative frames. It is distinct from the older standalone WordPress recreation, which remains explicitly labelled in the README. Catalogue and product captures with third-party character artwork remain outside this repository.
+The published [responsive homepage composition](images/wordpress-responsive-hero.png) uses captures of the recovered interface inside illustrative frames. The gallery now also publishes the retained catalogue, categories, collection, products and brand compositions, replacing the old standalone WordPress recreation. They are historical local-restoration captures, not fresh WordPress browser runs.
 
-The hero contains historical fashion photography and branding. It is not public-domain material and this repository grants no rights to extract or reuse it.
+The gallery contains historical fashion photography, branding and third-party product artwork. It is not public-domain material and this repository grants no rights to extract or reuse it.
+
+### Fresh Angular captures — 25 October 2026
+
+The current local Angular checkout contains further work beyond the historical source review: a local catalogue with 74 products, updated category/theme filters, a stronger catalogue layout and product size/colour controls. The product service reads local data rather than the unavailable Firebase catalogue.
+
+The frontend development server was started on localhost port 4201, leaving an unrelated service on port 4200 untouched. Chrome headless captured `/home` and `/product/541`, replacing the old synthetic catalogue and product images. The screenshot pass confirmed 74 rendered catalogue cards, the selected product title and loaded images in the visible viewports. It did not test the full catalogue, cart, authentication, orders, payments or email. Existing local application changes were not edited or published with this documentation repository.
 
 ## Evidence and validation limits
 
 - **Historical execution:** the recovery conversation records the restore, HTTP response, URL corrections, plugin activation, screenshots and catalogue CSS changes.
-- **Retained assets:** the responsive hero was visually inspected and copied from the original external-disk portfolio asset collection. Other local compositions were not republished automatically.
-- **This update:** documentation and published asset integrity only; no Docker startup, database import, Angular build or browser interaction was repeated.
+- **Retained assets:** WordPress responsive compositions were copied from the external-disk portfolio asset collection; the hero, catalogue and category compositions were visually inspected.
+- **This update:** fresh Angular development compilation and catalogue/product browser captures, plus documentation and image integrity checks. No Docker startup, database import or production build was repeated.
 - **Not established:** current availability, production readiness, authentication, checkout, payment processing, email delivery, conversion improvements or measured performance gains.
 - **Private material excluded:** full-site archives, database dumps, credentials, customer/order records and logs.
 
