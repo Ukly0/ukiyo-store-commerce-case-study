@@ -2,6 +2,8 @@
 
 A documentation-only study of an apparel storefront across two stages: a WordPress/WooCommerce storefront archived from 2022-2024 and an Angular final-degree migration from 2023-2024. It describes the structure visible in the sources and separates source-level implementation from runtime validation.
 
+The story also includes a September 2026 local recovery: restoring the original WordPress design from a full-site backup, refining the catalogue presentation and producing responsive portfolio compositions from the restored interface. [Recovery and design improvements](docs/recovery-and-improvements.md).
+
 ![Ukiyo Store project cover](docs/images/ukiyo-store-cover.png)
 
 *Project cover. It presents the two stages; it is a portfolio composition, not an interface capture.*
@@ -12,9 +14,9 @@ A documentation-only study of an apparel storefront across two stages: a WordPre
 |---|---|---|
 | Period | 2022-2024 | 2023-2024 |
 | Nature | Configured WordPress/WooCommerce storefront archive | Final-degree software migration |
-| Runtime | Not verified live | Not deployed or executed in this review |
+| Runtime | Local restore recorded in September 2026; no current public deployment verified | Source review only; no end-to-end validation |
 | Core | WordPress, WooCommerce, Astra, Elementor | Angular, Firebase, Express, Stripe |
-| Visuals | Portfolio recreation with public-domain art | Portfolio recreations with public-domain art |
+| Visuals | Restored homepage capture in a responsive composition, plus a labelled recreation | Portfolio recreations with public-domain art |
 
 ## Historical storefront archive
 
@@ -37,7 +39,17 @@ The migration is observable in structure only: routes, models, services, package
 
 ## Visuals
 
-The images below are portfolio recreations prepared for this case study. They are not raw captures of the live store. The printed artwork is public-domain ukiyo-e; the browser and device frames are illustrative. Raw captures containing third-party character artwork are intentionally excluded.
+### Original design, recovered locally
+
+![Recovered Ukiyo storefront homepage shown on desktop and mobile](docs/images/wordpress-responsive-hero.png)
+
+*Original storefront interface captured from the local restoration, presented in illustrative desktop and mobile frames. This is not the current public website, a new deployment or a public-domain image. The fashion photography belongs to the historical storefront media; no reuse rights are granted.*
+
+The recovery brought back the Astra/Elementor homepage, including the “BE JAPAN” hero, navigation and original black-and-white identity. The local catalogue was subsequently refined with consistent image proportions, shorter titles, simpler actions and more regular spacing. These are presentation changes, not a claim of improved sales or performance. See the [recovery record and evidence limits](docs/recovery-and-improvements.md).
+
+### Illustrative portfolio recreations
+
+The three images below remain labelled recreations, not captures of the restored interface. Their printed artwork is public-domain ukiyo-e; browser frames are illustrative. Raw captures containing third-party character artwork are intentionally excluded.
 
 ### WordPress/WooCommerce storefront
 
@@ -70,7 +82,7 @@ The images below are portfolio recreations prepared for this case study. They ar
 | Order history and admin orders | `orders` and `adminorders` routes; order service | Implemented in source; not tested |
 | Checkout return and email | Success route with session id; Express and Nodemailer packages | Implemented in source; not executed |
 
-The table records code presence, not a working product. No route, build, test, payment or email flow was executed.
+The table records the Angular source review, not a working product. It does not validate routes, builds, tests, payments or email. The separately recorded WordPress restoration does not validate the Angular application.
 
 ## Stack
 
@@ -87,6 +99,8 @@ The table records code presence, not a working product. No route, build, test, p
 - 2023-09: first Angular commit.
 - 2024-06: final-degree delivery.
 - 2025-09: documentation update in the source repository.
+- 2026-09-18: local WordPress restoration, catalogue presentation changes and responsive compositions recorded in the recovery session.
+- 2026-10-25: recovery evidence reconciled with this case study; restored homepage composition added.
 
 Dates describe evidence, not employment periods.
 
@@ -110,9 +124,9 @@ The t-shirt base is the project's own mockup; the printed artwork was substitute
 - The Angular project is academic and was not verified in production.
 - The historical stage is a WordPress/WooCommerce archive, not a custom CMS or checkout implementation.
 - No sales, revenue, conversion, customer or traffic claim is made.
-- The interface images are portfolio recreations, not the store's original UI or product photography.
+- The restored homepage composition shows the original interface; the other three interface images are explicitly labelled portfolio recreations.
 - Raw captures containing third-party character artwork are not published.
-- No live URL, deployment or runtime test was available for this review.
+- The historical local restore is documented from the recovery session and retained assets; it has not been rerun for this update. No current public deployment, checkout or payment flow is verified.
 - This repository contains documentation and portfolio visuals, not the legacy application's source code. No licence for reuse is granted.
 
 Technical details are in `docs/technical-notes.md`.

@@ -1,12 +1,12 @@
 # Technical notes
 
-Engineering notes for the Ukiyo Store commerce case study. This document describes the observable source structure and the published visual assets. It is not a runtime report.
+Engineering notes for the Ukiyo Store commerce case study. This document describes the observable source structure, published visual assets and a separately recorded historical local restoration. It is not a fresh runtime report.
 
 ## Source boundary
 
 - The Angular project was reviewed read-only through source files: routes, modules, models, selected services, package files and the repository tree.
-- The historical WordPress archive was inspected by structure, version files, plugin directories, media inventory and log filenames. Database, orders, customer records and log content were not opened.
-- No live URL, deployment, build or test run was available.
+- The initial WordPress archive review inspected structure, version files, plugin directories, media inventory and log filenames without opening customer records or log content. A separate September recovery session records a full-site database import; that database is not included here.
+- This update reconciles that recovery session with retained portfolio assets. No deployment, build or runtime test was rerun. See [Recovery and improvements](recovery-and-improvements.md).
 
 ## Angular architecture
 
@@ -96,7 +96,7 @@ The archive is a historical storefront record. It does not establish sales, reve
 
 ## Visual assets
 
-The repository publishes four PNG files in `docs/images/`:
+The repository publishes five PNG files in `docs/images/`:
 
 | File | Size | Content |
 |---|---|---|
@@ -104,23 +104,24 @@ The repository publishes four PNG files in `docs/images/`:
 | `store-wordpress.png` | 1440x900 | WordPress/WooCommerce storefront composition |
 | `store-angular-catalog.png` | 1440x900 | Angular catalogue composition |
 | `store-angular-product.png` | 1440x900 | Angular product-detail composition |
+| `wordpress-responsive-hero.png` | 3200x2000 | Original locally restored homepage in illustrative desktop/mobile frames |
 
-The three interface images are portfolio recreations prepared from the project's mockup assets. Browser and device frames are illustrative. The cover is a project composition, not an interface capture.
+The three `store-*.png` interface images are portfolio recreations prepared from the project's mockup assets. The responsive hero instead contains captures of the original locally restored interface. Browser and device frames are illustrative in both cases. The cover is a project composition, not an interface capture.
 
 The printed artwork is public-domain ukiyo-e sourced from Wikimedia Commons: Hokusai's *Great Wave off Kanagawa*, *Red Fuji*, *Mishima Pass in Kai Province* and *Storm below the summit*; Hiroshige's *Sudden Shower over Shin-Ohashi Bridge* and *Plum Garden at Kameido*. The t-shirt base comes from the project's own mockup.
 
-Raw captures containing third-party character artwork are not published. The repository does not include the WordPress database, orders, customer records, logs or original product photography.
+Raw captures containing third-party character artwork are not published. The repository does not include the WordPress database, orders, customer records, logs or a product-photography collection. The responsive hero includes historical storefront fashion photography, not public-domain artwork; no reuse rights are granted.
 
 ## Validation
 
-- The four PNG files open and report the expected dimensions.
+- The published PNG files are checked for valid headers and expected dimensions when updating the documentation.
 - Both architecture SVGs parse as valid XML.
 - The README image paths resolve to files in `docs/images/`.
-- Angular build, tests, Express server, Stripe, Firebase, SMTP and WordPress restore were not run.
+- Angular build, tests, Express server, Stripe, Firebase and SMTP were not run in this documentation update. The WordPress restore is a historical session record, not a fresh execution.
 
 ## Evidence limits
 
-- The visual recreations do not demonstrate the original frontend or its visual fidelity.
+- The visual recreations do not demonstrate the original frontend or its visual fidelity; the restored hero is separately identified as an original-interface capture in a composition.
 - Source-level features are not runtime-validated.
 - The historical archive does not prove commercial performance.
-- The case study does not include customer data, orders or original brand assets.
+- The case study does not include customer data or orders. Store branding and historical photography visible in the recovered hero are presentation evidence only, not reusable asset downloads.
