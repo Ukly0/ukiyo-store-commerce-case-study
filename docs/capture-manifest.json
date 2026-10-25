@@ -1,0 +1,167 @@
+{
+  "capturedAt": "2026-10-25T09:58:52.219Z",
+  "type": "local-runtime-project-sample-version",
+  "privacy": "No historical users, reviews, customer orders or credentials in captures.",
+  "scope": "Restored WordPress and latest reviewed Angular frontend running the same six existing project t-shirt samples. Sample data and EUR prices; not historical catalogue records. Shopify not recovered.",
+  "sourceRevision": "40f7f820e876c3c1a16b336950f78941ecb131db",
+  "catalogue": "sample-collection.json",
+  "blockedExternalHosts": [],
+  "tests": [
+    {
+      "name": "WordPress catalogue renders the six project samples",
+      "status": "passed"
+    },
+    {
+      "name": "WordPress variation enables add to cart",
+      "status": "passed"
+    },
+    {
+      "name": "WordPress confirms add to cart",
+      "status": "passed"
+    },
+    {
+      "name": "WordPress selected product persists in cart",
+      "status": "passed"
+    },
+    {
+      "name": "Angular local catalogue renders",
+      "status": "passed"
+    },
+    {
+      "name": "Angular search reduces the visible catalogue",
+      "status": "passed"
+    },
+    {
+      "name": "Angular add to cart persists variant and total",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [
+    {
+      "route": "/",
+      "message": "Invalid count value: Infinity"
+    }
+  ],
+  "captures": [
+    {
+      "file": "images/runtime/wordpress-home.png",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Restored WordPress homepage in the local sample-catalogue version. Original template; video paused for a still capture."
+    },
+    {
+      "file": "images/runtime/wordpress-catalogue.png",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Real WooCommerce catalogue populated with the six existing ukiyo-e t-shirt samples supplied in the project. Demo products, prices and variants; not the historical product dataset."
+    },
+    {
+      "file": "images/runtime/wordpress-product.png",
+      "route": "/product/sample-ola/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Restored product template showing The Great Wave project sample, size M and colour White."
+    },
+    {
+      "file": "images/runtime/wordpress-cart.png",
+      "route": "/cart/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Actual guest cart, populated through the product form. No order submitted."
+    },
+    {
+      "file": "images/runtime/angular-home.png",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Latest reviewed Angular frontend with the project sample shirts in its existing landing animation. Local Firebase; historical testimonials omitted."
+    },
+    {
+      "file": "images/runtime/angular-catalogue.png",
+      "route": "/home",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Latest reviewed Angular components populated with the same six project-supplied sample shirts as WordPress. This is a working sample version, not the historical Firebase dataset."
+    },
+    {
+      "file": "images/runtime/angular-search.png",
+      "route": "/home",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Live search after typing Wave isolates The Great Wave from the six-sample collection. This is an interaction, not an edited screenshot."
+    },
+    {
+      "file": "images/runtime/angular-product.png",
+      "route": "/product/sample-ola",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Latest reviewed product component with The Great Wave project sample. Size M and colour White are selected. The collection and prices are explicit demo data."
+    },
+    {
+      "file": "images/runtime/angular-cart.png",
+      "route": "/cart",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "note": "Cart filled through the real product action and persisted in the local Firebase database. Payment requests are blocked."
+    },
+    {
+      "file": "images/runtime/angular-mobile-filters.png",
+      "route": "/home",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "note": "Original mobile filter overlay, opened through its filter button."
+    },
+    {
+      "file": "images/runtime/angular-mobile-product.png",
+      "route": "/product/sample-ola",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "note": "Original mobile product layout and bottom Add to Cart action."
+    },
+    {
+      "file": "images/runtime/wordpress-mobile-home.png",
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "note": "Original WordPress homepage at a 390px viewport."
+    }
+  ]
+}

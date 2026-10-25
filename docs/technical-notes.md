@@ -1,133 +1,120 @@
-# Technical notes
+# Architecture and local setup
 
-Engineering notes for the Ukiyo Store commerce case study. This document describes the observable source structure, published visual assets and a separately recorded historical local restoration. It is not a fresh runtime report.
+## What the repository contains
 
-## Source boundary
+The static case study, browser captures, a capture manifest and the scripts used to record and check the presentation. It does **not** contain the WordPress backup, SQL database, credentials, original Angular source, Firebase export or raw product-media library.
 
-- The Angular project was reviewed read-only through source files: routes, modules, models, selected services, package files and the repository tree.
-- The initial WordPress archive review inspected structure, version files, plugin directories, media inventory and log filenames without opening customer records or log content. A separate September recovery session records a full-site database import; that database is not included here.
-- This update reconciles that recovery session with retained portfolio assets and freshly captures the locally adapted Angular catalogue/product pages. No production deployment or backend flow was tested. See [Recovery and improvements](recovery-and-improvements.md).
+## WordPress storefront
 
-## Angular architecture
+### Stack
 
-The application is a single-page Angular frontend with three service groups:
+- WordPress 6.6.2, PHP 8.2 and MariaDB 11 in Docker.
+- WooCommerce 8.0.1, Astra 4.0.1, Elementor 3.15.3 and PRO Elements 3.14.0.
+- The local instance is based on the project's August 2023 full-site archive.
 
-1. **Firebase client services.** Authentication and Realtime Database are accessed through AngularFire compatibility modules.
-2. **Express API.** The server handles payment and email routes.
-3. **External services.** Stripe Checkout creates a hosted payment session; Nodemailer sends transactional email.
+### Local environment
 
-Route guards separate public pages, authenticated customer pages and administrator pages. The server package declares the Firebase Admin SDK; its exact server role was not reviewed, so it is not shown as a verified request path.
+1. Import the site into a private, non-versioned directory. Do not reuse the archive's `wp-config.php` or provider credentials.
+2. Import the catalogue and design tables only. Exclude historical users, comments, customer lookup, orders, payment tokens, submissions, analytics and marketing data.
+3. Remove non-public content and orphaned metadata; clear users and comments.
+4. Use fresh local database credentials. Set local `WP_HOME` and `WP_SITEURL`, disable cron, outbound HTTP and mail, and disable live payment and marketing integrations.
+5. Run the container on an internal Docker network. In the Docker version used here, internal networks do not publish ports; a loopback-only host relay provides access without container egress.
+6. Verify that no original users, comments or orders remain before browsing.
 
-## Routes
+### Catalogue and cart
 
-| Route | Component | Guard | Purpose |
-|---|---|---|---|
-| `/` | Landing | None | Landing page |
-| `/home` | Home | None | Catalogue and filters |
-| `/product/:key` | Product | None | Product detail |
-| `/cart` | Cart | None | Cart |
-| `/wishlist` | Wishlist | Auth guard | Authenticated wishlist |
-| `/orders` | Orders | Auth guard | Customer order history |
-| `/success`, `/success/:session_id` | Success | None | Checkout return |
-| `/products-list` | Admin product list | Auth and admin guards | Admin catalogue |
-| `/add-product`, `/add-product/:key` | Admin product editor | Auth and admin guards | Create or edit product |
-| `/adminorders` | Admin orders | Auth and admin guards | Admin order view |
+The sample edition loads the six project shirts through WooCommerce's product and variation APIs. The capture workflow selects a product, chooses size and colour, submits the real product form, waits for confirmation and opens the resulting guest cart. No checkout is submitted.
 
-The route table is a source inspection, not a runtime test.
+Storefront media dates and archive presence do not establish sales or current operation.
 
-## Data model
+## Angular storefront
 
-| Model | Observed fields | Role |
-|---|---|---|
-| `Product` | key, title, price, offerPrice, categories, themes, sizes, colors, description, images | Catalogue item and variants |
-| `Variant` | productKey, selectedSize, selectedColor, price, title, img | Selected configuration |
-| `Cart` | Cart state consumed by orders | Cart |
-| `Order` | cart, email, shipping, status, orderNumber | Order record |
-| `User` | uid, email, firstName, lastName, isAdmin, cartId | Profile and role |
+### Stack
 
-The model supports a catalogue, cart, checkout result and admin order view. It is not a full inventory, tax or fulfilment domain model.
+- Angular 14.2, TypeScript 4.7, RxJS 7.5, Angular Material/CDK 13 and Tailwind 3.4.
+- Firebase 9.9 and AngularFire 7.4 for authentication and Realtime Database.
+- Express 4.18, Stripe 10.17 and Nodemailer 6.9 for the checkout service.
 
-## Feature implementation notes
+### Features
 
-- **Catalogue.** The product service reads a product collection and sorts image references. The product route receives a key.
-- **Filters and categories.** Home components and a category service provide the browsing surface.
-- **Cart.** Cart state is represented by a dedicated route, service and model.
-- **Wishlist.** The wishlist route is protected by the authentication guard.
-- **Authentication.** The login component and auth service use AngularFireAuth. Provider configuration was not inspected.
-- **Admin.** Product list, product editor and order views are protected by authentication and administrator guards.
-- **Checkout.** The success route accepts a session id; the Express server and Stripe dependency provide the payment-session side.
-- **Email.** The server declares Nodemailer and contains email route files. No message was sent.
-- **Tests.** Karma and Jasmine specs exist for components and services. They were not executed.
+- Catalogue and product detail.
+- Live search, category and theme filters.
+- Product variants and cart.
+- Wishlist and customer authentication.
+- Admin product, order and customer routes with auth/admin guards.
+- Checkout return and email service in the source.
 
-## Stack
+### Local environment
 
-| Package | Version | Role |
-|---|---|---|
-| `@angular/core` | 14.2 | SPA framework |
-| `typescript` | 4.7 | Language and compiler |
-| `rxjs` | 7.5 | Reactive streams |
-| `@angular/material` / `@angular/cdk` | 13 | UI primitives |
-| `tailwindcss` | 3.4 | Utility styling |
-| `firebase` | 9.9 | Client SDK |
-| `@angular/fire` | 7.4 | Angular Firebase integration |
-| `express` | 4.18 | Server API |
-| `stripe` | 10.17 | Checkout session API |
-| `nodemailer` | 6.9 | Email transport |
-| `firebase-admin` | 12 | Server dependency; exact role not reviewed |
+- Install dependencies with scripts disabled and legacy peer dependency resolution.
+- Run the Angular development build. The build emits legacy CSS-import, autoprefixer and CommonJS warnings; this is not a claim of a clean production dependency audit or a historical test-suite pass.
+- Add local environment values and AngularFire `USE_EMULATOR` providers.
+- Use the project's six sample shirts for the catalogue and landing animation.
+- Do not include production environment files, server credentials or historical demo-account hints.
+- The local Firebase project uses database and auth emulators bound to loopback. The original hosted dataset is not part of this repository.
 
-Angular 14 and this toolchain are legacy in 2026. The versions are a historical snapshot, not a dependency-audit result.
+The sample products, EUR prices and variants are demonstration data, not historical catalogue records or a Firebase snapshot.
 
-## Historical storefront stack
+### Checkout and external services
 
-| Component | Version or evidence |
-|---|---|
-| WordPress | 6.6.2 |
-| WooCommerce | 9.2.3 |
-| Theme | Astra 4.0.1 |
-| Page builder | Elementor and Elementor Pro |
-| Payments | WooCommerce Payments, PayPal Payments |
-| Marketing and feeds | Google Listings and Ads, Pinterest, Facebook for WooCommerce, MailPoet, Woo Product Feed Pro |
-| Operations | Bulk editor, size chart, image flipper, media deduper, preloader |
-| Infrastructure | SiteGround Optimizer, SG Security, All-in-One WP Migration |
-| Media | Product and brand files dated 2022-2024 |
-| Archive | Full-site archive dated 2023-08-28 |
+The local presentation server applies a restrictive `connect-src` Content Security Policy allowing only local emulator connections. Browser automation allows only loopback and the public font/static-library origins required by the original UI. Stripe and the original hosted backend are not enabled. A payment button in the UI does not mean checkout was tested.
 
-The archive is a historical storefront record. It does not establish sales, revenue, customer counts or current operation.
+## Sample catalogue
 
-## Visual assets
+The six shirts already existed in the project:
 
-The current gallery replaces the older synthetic interface recreations:
+| Sample | Artwork |
+| --- | --- |
+| The Great Wave | Katsushika Hokusai, *The Great Wave off Kanagawa*, 1831 |
+| Red Fuji | Katsushika Hokusai, *Fine Wind, Clear Morning*, c. 1831 |
+| Sudden Shower | Utagawa Hiroshige, *Sudden Shower over Shin-Ohashi Bridge*, 1857 |
+| Plum Garden | Utagawa Hiroshige, *Plum Garden at Kameido*, 1857 |
+| Mishima Pass | Katsushika Hokusai, *Mishima Pass in Kai Province*, c. 1831 |
+| Storm below the Summit | Katsushika Hokusai, *Storm below the Summit*, c. 1831 |
 
-| File | Size | Content |
-|---|---|---|
-| `ukiyo-store-cover.png` | 1200x750 | Reduced recovered-homepage composition |
-| `store-wordpress.png` | 3200x2000 | Latest retained restored catalogue composition |
-| `store-angular-catalog.png` | 2880x2800 | Fresh local Angular catalogue capture at 2x |
-| `store-angular-product.png` | 2880x2000 | Fresh local Angular product capture at 2x |
-| `wordpress-responsive-hero.png` | 3200x2000 | Original locally restored homepage in illustrative desktop/mobile frames |
-| `wordpress-responsive-categorias.png` | 3200x2000 | Restored category navigation composition |
-| `wordpress-responsive-coleccion.png` | 3200x2000 | Restored collection composition |
-| `wordpress-responsive-productos.png` | 3200x2000 | Restored product section composition |
-| `wordpress-responsive-marca.png` | 3200x2000 | Restored brand section composition |
+The printed ukiyo-e works are public-domain material sourced through Wikimedia Commons. The shirt base is the project's existing mockup. Demo sizes are S, M, L and XL; the photographed sample colour is White. Prices are explicit EUR fixtures, not historical prices or evidence of sales.
 
-WordPress compositions were copied from the latest responsive assets retained on the external disk. They contain real captures of the recovered interface in illustrative browser/device frames. Docker was not started again for this update. The mobile catalogue composition exposes horizontal clipping; these assets are not evidence of flawless responsive behaviour.
+Each sample supplies one front image. The Angular template reuses that view in its two image slots rather than fabricating a second photograph.
 
-Angular captures were generated on 25 October 2026 with Chrome headless, at a 1440px CSS viewport width and device scale factor 2, against the development server on localhost port 4201. The catalogue viewport is 1400px tall and the product viewport is 1000px tall. Fonts and visible images were allowed to load before capture. The pages rendered 74 catalogue cards and the product `541` (Japanese Shirt 'Newspaper'), with no unloaded/broken images visible in either capture.
+## Capture workflow
 
-The locally modified product service reads `PRODUCTS` from a local catalogue module, including product media recovered from the WordPress backup. These are not the former six-product public-domain-art mockups, and not a live Firebase connection. The application source and its existing local changes were not edited or committed by this gallery update.
+Requirements: a local WordPress instance at `http://127.0.0.1:18780`, the Angular build at `http://127.0.0.1:18781`, Firebase emulators and the six-sample catalogue.
 
-The screenshots include historical fashion photography, product prints and third-party characters. No public-domain status or licence to reuse those materials is claimed. Database dumps, credentials, orders, customer records and logs remain excluded.
+```sh
+npm install
+npx playwright install chromium
+npm run capture
+python scripts/optimize-captures.py
+```
 
-## Validation
+Pillow is required for WebP derivatives. `WORDPRESS_URL`, `ANGULAR_URL` and `CHROMIUM_PATH` can override local defaults. Do not point the capture script at a production shop: it adds a guest-cart item.
 
-- The published PNG files are checked for valid headers and expected dimensions when updating the documentation.
-- Both architecture SVGs parse as valid XML.
-- The README image paths resolve to files in `docs/images/`.
-- Angular development compilation and catalogue/product rendering were exercised for the fresh captures. No unit tests, production build, Express, Stripe, Firebase authentication, SMTP or checkout flow was validated. The WordPress restore is a historical session record, not a fresh execution.
+`scripts/capture.mjs` records browser PNGs and the successful/failed interaction assertions. WebP derivatives preserve dimensions; they are not composited, redacted or reconstructed. The homepage video is paused for a still; other animations may be captured at a particular frame.
 
-## Evidence limits
+The workflow checks catalogue rendering, variation selection, add-to-cart confirmation, guest cart persistence, live search and Angular cart persistence. Mobile captures use a 390 × 844 viewport. It does not claim a full browser/device matrix or exhaustive regression coverage.
 
-- WordPress compositions reflect a historical local restoration; Angular captures reflect a locally adapted frontend, not the unchanged upstream repository.
-- Source-level backend features remain unvalidated; displaying 74 cards does not validate all product images, variants or interactions.
-- The historical archive does not prove commercial performance.
-- The case study does not include customer data or orders. Store branding, historical photography and product artwork visible in the gallery are presentation evidence only, not reusable asset downloads.
+The capture manifest also retains runtime warnings. The WordPress mobile marquee can emit `Invalid count value: Infinity` during its geometry calculation. The selected catalogue, variant and cart checks pass independently; the warning is not edited out of the report.
+
+`npm run record` records the Angular search-to-cart journey continuously. It requires FFmpeg, transcodes and scales the browser recording without cuts or composited controls, and writes a timestamped event manifest in `docs/video/manifest.json`. Playback is opt-in, has no audio and has an equivalent text walkthrough. It records no payment.
+
+## Presentation validation
+
+```sh
+npm run preview
+# In another terminal:
+npm test
+```
+
+The presentation test checks image loading, chapter anchors, five widths (1440, 1024, 768, 390, 320), no horizontal page overflow, journey tabs, arrow-key navigation, image-dialog opening/Escape/focus return and a JavaScript-disabled reading fallback. This tests the case-study website, not accessibility conformance of the legacy shops.
+
+## Scope and claims
+
+- The Angular application is academic and was not verified in production.
+- The WordPress stage is a configured storefront, not a custom CMS or checkout implementation.
+- No sales, revenue, conversion, customer, traffic, live availability or completed-payment claim is made.
+- The Shopify stage is not implemented; no theme export or interface capture is included.
+- The interface captures document the local sample edition, not the store's original photography or a production deployment.
+
+## Rights and attribution
+
+Only screenshots of the interface are used for editorial documentation. Artwork, fashion photography and platform marks visible in those screenshots remain third-party material; no standalone originals or reuse licence are supplied. WordPress, WooCommerce, Astra, Elementor, Angular, Firebase and Shopify are third-party products; their development is not attributed to the author.

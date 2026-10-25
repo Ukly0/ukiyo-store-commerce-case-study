@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ukiyo Store: a commerce design case study, from a WordPress storefront to a custom Angular shopping experience, running locally with a six-shirt sample catalogue.">
+  <meta name="theme-color" content="#f5f3ed">
+  <title>Ukiyo — Beyond the storefront</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="case-study.css">
+  <script src="case-study.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to case study</a>
+  <header class="site-header">
+    <a class="wordmark" href="#" aria-label="Ukiyo, back to top">UKIYØ<span>/</span></a>
+    <span class="header-label">COMMERCE / A DESIGN RETROSPECTIVE</span>
+    <a class="header-link" href="#evidence">Behind the captures <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="square"></span> INDEPENDENT PROJECT · BRAND, UX & FRONTEND</div>
+      <div class="hero-copy">
+        <h1 id="hero-title">Beyond the<br><span class="underline">storefront.</span></h1>
+        <div class="hero-aside">
+          <p class="intro">A bold identity.<br>A considered shopping journey.</p>
+          <p>Ukiyo’s evolution from a configured WooCommerce shop to a custom Angular experience — running with the six t-shirt samples already made for the project.</p>
+          <a class="text-link" href="#journey">Explore the experience <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-stage">
+        <div class="stage-caption"><span>UKIYO STORE</span><span>REAL APPLICATIONS / PROJECT SAMPLE EDITION</span></div>
+        <div class="hero-screens">
+          <figure class="hero-before">
+            <div class="screen-label"><span>01 / WORDPRESS</span><span>WORDPRESS STOREFRONT</span></div>
+            <a href="images/runtime/wordpress-home.png" data-lightbox data-caption="WordPress homepage running locally with the project sample catalogue."><img src="images/runtime/wordpress-home.webp" width="1440" height="1000" alt="Ukiyo WordPress homepage with its fashion video, white wordmark and Shop Now action." fetchpriority="high"></a>
+          </figure>
+          <span class="evolution-arrow" aria-hidden="true">↗</span>
+          <figure class="hero-after">
+            <div class="screen-label"><span>02 / ANGULAR</span><span>CUSTOM FRONTEND</span></div>
+            <a href="images/runtime/angular-home.png" data-lightbox data-caption="Angular frontend running locally with the project’s ukiyo-e sample shirts and a local Firebase emulator."><img src="images/runtime/angular-home.webp" width="1440" height="1000" alt="Running Angular homepage with the original yellow and cyan split and a project-supplied ukiyo-e sample shirt."></a>
+          </figure>
+        </div>
+        <p class="stage-footnote">Two storefronts, one sample catalogue. Shopify is outside this case study. <a href="#shopify">See the scope ↗</a></p>
+      </div>
+      <dl class="project-meta">
+        <div><dt>CONTEXT</dt><dd>Independent apparel brand</dd></div>
+        <div><dt>PERIOD</dt><dd>WordPress 2022–24 / Angular 2023–24</dd></div>
+        <div><dt>CONTRIBUTION</dt><dd>Store configuration → custom UI & code</dd></div>
+        <div><dt>THIS PRESENTATION</dt><dd>Working project-sample edition</dd></div>
+      </dl>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Case study chapters">
+      <div class="wrap nav-inner"><a href="#challenge">01 / The challenge</a><a href="#stores">02 / The storefronts</a><a href="#journey">03 / The journey</a><a href="#reflection">04 / The next iteration</a><a href="#evidence">05 / The evidence</a></div>
+    </nav>
+
+    <section id="challenge" class="section wrap">
+      <div class="section-index">01 — THE CHALLENGE</div>
+      <div class="editorial-grid">
+        <h2>Make the brand<br>loud. Keep the<br>purchase simple.</h2>
+        <div class="prose">
+          <p class="lead">The original store had a clear visual world. The next challenge was giving shoppers more control inside it.</p>
+          <p>WordPress brought together product discovery, variations and a familiar WooCommerce purchase flow. The Angular final-degree project explored what could be owned directly: catalogue search, category and theme filters, saved products, the product view and the cart.</p>
+          <p>The original degree report describes the move beyond a paginated catalogue and records wireframes, desktop layouts and mobile adaptations. Those are the foundations of this retrospective — not a newly invented research process.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <article><span class="principle-number">A.</span><h3>Identity without ambiguity</h3><p>Keep the Japanese streetwear character, while giving navigation, price and purchase actions a consistent hierarchy.</p></article>
+        <article><span class="principle-number">B.</span><h3>Discovery with agency</h3><p>Let shoppers narrow the catalogue by what a garment is and the visual world it belongs to.</p></article>
+        <article><span class="principle-number">C.</span><h3>Confidence before commitment</h3><p>Bring images, price and variants together, then offer a reviewable cart before payment.</p></article>
+      </div>
+      <div class="sample-collection"><div><span class="section-index">THE PROJECT’S OWN SAMPLE COLLECTION</span><p>Six designs. One consistent catalogue across both applications.</p></div><ul><li>The Great Wave <span>Hokusai</span></li><li>Red Fuji <span>Hokusai</span></li><li>Sudden Shower <span>Hiroshige</span></li><li>Plum Garden <span>Hiroshige</span></li><li>Mishima Pass <span>Hokusai</span></li><li>Storm below the Summit <span>Hokusai</span></li></ul><p class="evidence-note">Existing project t-shirt samples, not newly invented artwork. The catalogue, variants and EUR prices are demonstration data. <a href="samples.md">Samples and version provenance ↗</a></p></div>
+    </section>
+
+    <section id="stores" class="section stores-section">
+      <div class="wrap">
+        <div class="section-index">02 — THE STOREFRONTS</div>
+        <div class="section-heading"><h2>Different foundations.<br>The same shopping intent.</h2><p>Each platform has its own story.<br>No invented continuity. No substitute UI.</p></div>
+        <div class="store-grid">
+          <article class="store-card wordpress-card">
+            <div class="store-top"><span>01</span><span class="status">RUNNING LOCALLY</span></div>
+            <h3>WordPress<span>+ WooCommerce</span></h3>
+            <a href="images/runtime/wordpress-catalogue.png" data-lightbox data-caption="WooCommerce catalogue running locally with the six project sample shirts. Demo products and prices."><img src="images/runtime/wordpress-catalogue.webp" width="1440" height="1000" loading="lazy" alt="WooCommerce catalogue displaying the six project-supplied ukiyo-e sample t-shirts."></a>
+            <p>Brand-led merchandising on Astra and Elementor. Product configuration and cart behaviour supplied by WooCommerce.</p>
+            <dl><div><dt>OWNED WORK</dt><dd>Brand presentation, storefront configuration and catalogue.</dd></div><div><dt>NOT CLAIMED</dt><dd>Authorship of the theme, builder or commerce engine.</dd></div></dl>
+          </article>
+          <article class="store-card angular-card">
+            <div class="store-top"><span>02</span><span class="status">RUNNING LOCALLY</span></div>
+            <h3>Angular<span>+ Firebase / Express</span></h3>
+            <a href="images/runtime/angular-catalogue.png" data-lightbox data-caption="Angular catalogue with the six project sample shirts, running on a local Firebase emulator."><img src="images/runtime/angular-catalogue.webp" width="1440" height="1000" loading="lazy" alt="Angular catalogue with six ukiyo-e sample shirts, artist filters and a live search field."></a>
+            <p>A custom academic frontend with a more explicit visual system, live search, filters, saved products and a Firebase-backed cart.</p>
+            <dl><div><dt>OWNED WORK</dt><dd>Application UI, components, services and interaction logic.</dd></div><div><dt>SAMPLE EDITION</dt><dd>Local Firebase with the same six project samples as WordPress.</dd></div></dl>
+          </article>
+          <article id="shopify" class="store-card shopify-card">
+            <div class="store-top"><span>03</span><span class="status pending">OUT OF SCOPE</span></div>
+            <h3>Shopify<span>Not included</span></h3>
+            <div class="pending-visual"><span aria-hidden="true">—</span><p>No interface.<br>No claim.</p><small>NO SUBSTITUTE UI</small></div>
+            <p>This case study covers the WordPress and Angular storefronts. Shopify is not implemented or captured here.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section wrap">
+      <div class="section-index">03 — THE SHOPPING JOURNEY</div>
+      <div class="section-heading"><h2>Not just how it looked.<br>How you moved through it.</h2><p>Captures from both applications running locally.<br>Select a step. Open any screen to inspect it.</p></div>
+      <div class="journey-tabs" role="tablist" aria-label="Shopping journey">
+        <button id="tab-discover" type="button" role="tab" aria-selected="true" aria-controls="journey-panel" data-step="discover"><span>01</span> Discover</button>
+        <button id="tab-choose" type="button" role="tab" aria-selected="false" aria-controls="journey-panel" tabindex="-1" data-step="choose"><span>02</span> Choose a variant</button>
+        <button id="tab-review" type="button" role="tab" aria-selected="false" aria-controls="journey-panel" tabindex="-1" data-step="review"><span>03</span> Review the cart</button>
+      </div>
+      <div id="journey-panel" role="tabpanel" aria-labelledby="tab-discover" tabindex="0">
+        <div class="comparison-grid">
+          <figure><div class="screen-label"><span>WORDPRESS / CONFIGURED COMMERCE</span></div><a id="journey-wp-link" href="images/runtime/wordpress-catalogue.png" data-lightbox data-caption="WooCommerce catalogue running with the six project sample t-shirts."><img id="journey-wp" src="images/runtime/wordpress-catalogue.webp" width="1440" height="1000" loading="lazy" alt="WordPress product grid displaying the six existing project sample shirts."></a><figcaption id="journey-wp-caption">A familiar product grid and sorting control, populated with the six samples.</figcaption></figure>
+          <figure><div class="screen-label yellow"><span>ANGULAR / CUSTOM INTERACTIONS</span></div><a id="journey-angular-link" href="images/runtime/angular-search.png" data-lightbox data-caption="Angular search in action: typing Wave isolates The Great Wave from the six project samples."><img id="journey-angular" src="images/runtime/angular-search.webp" width="1440" height="1000" loading="lazy" alt="Angular catalogue filtered to The Great Wave sample after typing Wave."></a><figcaption id="journey-angular-caption">A narrower result set, produced by typing into the real search field.</figcaption></figure>
+        </div>
+        <div class="decision-note"><span>THE DESIGN MOVE</span><div><h3 id="journey-title">From browsing pages to narrowing possibilities.</h3><p id="journey-description">The Angular catalogue puts search beside a persistent filter rail. Typing “Wave” isolates The Great Wave from the six-sample collection. The behaviour is exercised in the actual application, not simulated in this presentation.</p></div></div>
+      </div>
+      <p class="evidence-note">Both applications use the same existing project samples. Product and cart comparisons show The Great Wave, size M, colour White. Products, variants and EUR prices are explicit demo data, not historical transactions. No payment is submitted.</p>
+      <noscript><p>JavaScript is optional for reading. Additional captures: <a href="images/runtime/wordpress-product.png">WordPress product</a>, <a href="images/runtime/angular-product.png">Angular product</a>, <a href="images/runtime/wordpress-cart.png">WordPress cart</a>, <a href="images/runtime/angular-cart.png">Angular cart</a>.</p></noscript>
+      <div class="walkthrough">
+        <div class="walkthrough-heading"><div><span class="section-index">WATCH THE INTERACTION</span><h3>Search. Select. Add. Review.</h3></div><p>One continuous browser recording.<br>Actual UI and local persistence. No simulated controls.</p></div>
+        <video controls playsinline preload="none" poster="images/runtime/angular-search.webp" aria-label="Silent recording of the real Angular shopping journey" aria-describedby="walkthrough-transcript"><source src="video/angular-walkthrough.mp4" type="video/mp4"><a href="video/angular-walkthrough.mp4">Download the walkthrough</a></video>
+        <p id="walkthrough-transcript">Silent walkthrough: type “Wave” → open The Great Wave sample → choose size M and colour White → Add to Cart → open the mini-cart → View Cart. Recorded on the Angular frontend with the project’s sample collection. No checkout is submitted.</p>
+      </div>
+    </section>
+
+    <section class="mobile-section section">
+      <div class="wrap mobile-grid">
+        <div class="mobile-copy"><div class="section-index">THE SMALL-SCREEN EXPERIENCE</div><h2>Same character.<br>Different choreography.</h2><p>The Angular filter rail becomes an on-demand overlay. The product action stays at the bottom of the mobile view.</p><p>These are captures at a real 390px viewport, not desktop screens pasted into phone mockups.</p><div class="mobile-annotation"><span>↗</span><p><strong>Keep the next action available.</strong><br>Then check what it obscures. A sticky purchase action still needs keyboard, zoom and content-overlap testing.</p></div></div>
+        <figure class="mobile-shot"><div class="mobile-shot-label">01 / FILTERS OPEN</div><a href="images/runtime/angular-mobile-filters.png" data-lightbox data-caption="Angular mobile filters, opened through the application button. Local build, 390 × 844."><img src="images/runtime/angular-mobile-filters.webp" width="390" height="844" loading="lazy" alt="Angular mobile catalogue with its category and theme filter overlay open."></a></figure>
+        <figure class="mobile-shot offset"><div class="mobile-shot-label">02 / PRODUCT & ACTION</div><a href="images/runtime/angular-mobile-product.png" data-lightbox data-caption="Angular mobile product page. Local build, 390 × 844. The application’s original overflow is preserved, not retouched."><img src="images/runtime/angular-mobile-product.webp" width="390" height="844" loading="lazy" alt="Angular product page at mobile width, showing the garment and bottom Add to Cart button."></a></figure>
+      </div>
+    </section>
+
+    <section id="reflection" class="section wrap">
+      <div class="section-index">04 — THE NEXT ITERATION</div>
+      <div class="editorial-grid"><h2>A distinctive interface<br>is not the same as<br>a finished experience.</h2><div class="prose"><p class="lead">The valuable part of looking back is knowing what to challenge next.</p><p>The original report records wireframes and interface iterations. It does not give this retrospective an audited usability study or a measured conversion uplift. These are the next design questions, not results dressed as metrics.</p></div></div>
+      <div class="reflection-grid">
+        <article><span>01 / VARIANT CONFIDENCE</span><h3>Show what was selected.</h3><p>The Angular cart summary prioritises title, quantity and price. Size and colour are not prominent in that summary. Next: make the chosen variant explicit, then test whether shoppers can catch a wrong selection.</p></article>
+        <article><span>02 / HONEST PROMOTION</span><h3>Use a real deadline.</h3><p>The original countdown is calculated toward the next Monday, not a product-specific offer expiry. Next: tie the UI to a genuine promotion end date, or remove the urgency.</p></article>
+        <article><span>03 / MOBILE HIERARCHY</span><h3>Let the product breathe.</h3><p>Oversized moving titles bring character but compete with useful information. Next: reduce decorative motion, check wrapping, and test one-handed variant selection on narrow screens.</p></article>
+        <article><span>04 / ACCESSIBILITY</span><h3>Make the whole path usable.</h3><p>Next: audit focus, field labels, image alternatives, zoom and reduced motion in the original application. No WCAG compliance claim is made here.</p></article>
+      </div>
+      <div class="takeaway"><span>THE TAKEAWAY</span><p>Moving from a theme to a custom frontend is valuable when it changes what a shopper can do — <em>not merely what the stack is called.</em></p></div>
+    </section>
+
+    <section id="evidence" class="section evidence-section">
+      <div class="wrap">
+        <div class="section-index">05 — THE EVIDENCE</div>
+        <div class="section-heading"><h2>Real screens.<br>Clear boundaries.</h2><p>Running locally with the sample catalogue.<br>Not a claim of current production operation.</p></div>
+        <div class="evidence-grid">
+          <div><h3>Which version is running</h3><p><strong>WordPress:</strong> the WooCommerce storefront with the project sample catalogue.</p><p><strong>Angular:</strong> the custom frontend with a local Firebase emulator, the sample catalogue and sample shirts in its landing animation.</p></div>
+          <div><h3>What was kept out</h3><p>Original user accounts, comments and customer-order tables were excluded or removed from the local storefront. Live payment, mail and marketing integrations are disabled. The WordPress container has no outbound network.</p><p>Only interface captures and documentation belong in this repository — not the backup, database, credentials or raw product-media library.</p></div>
+          <div><h3>What remains unverified</h3><p>Production payments, transactional email and the original hosted dataset. No sales, traffic, conversion or customer-count claims are made.</p><p>The sample shirts already existed in the project and use public-domain ukiyo-e artwork. Platform marks and any original storefront photography retain their respective ownership. This is a sample edition, not a production catalogue.</p></div>
+        </div>
+        <div class="evidence-links"><a href="capture-manifest.json">Capture & interaction manifest ↗</a><a href="technical-notes.md">Architecture and setup ↗</a><a href="https://github.com/Ukly0/Ukiyo-Store-Angular">Original Angular repository ↗</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><a class="wordmark" href="#">UKIYØ<span>/</span></a><p>Commerce, considered.<br><span>A retrospective by Alberto Expósito García.</span></p><a href="#main">Back to top ↑</a></footer>
+
+  <dialog id="image-dialog" aria-labelledby="image-caption">
+    <div class="dialog-toolbar"><span>INTERFACE CAPTURE / UNRETOUCHED</span><button id="close-dialog" type="button" aria-label="Close image">Close <span aria-hidden="true">×</span></button></div>
+    <div class="dialog-image-wrap"><img id="dialog-image" alt=""></div>
+    <div class="dialog-caption"><p id="image-caption"></p><a id="original-link" href="#" target="_blank" rel="noopener">Open original PNG ↗</a></div>
+  </dialog>
+</body>
+</html>

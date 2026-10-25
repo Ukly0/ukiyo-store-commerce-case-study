@@ -1,0 +1,9 @@
+node_modules/
+.recovery/
+test-results/
+playwright-report/
+.env*
+*.sql
+*.sqlite*
+*.wpress
+*.log

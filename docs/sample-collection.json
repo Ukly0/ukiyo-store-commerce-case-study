@@ -1,0 +1,62 @@
+{
+  "sourceRevision": "40f7f820e876c3c1a16b336950f78941ecb131db",
+  "comparison": "Latest upstream differs from archived frontend only in historical demo-login hints, after normalising line endings. Those account hints were omitted.",
+  "adaptations": [
+    "Local emulator configuration",
+    "Project-supplied sample catalogue",
+    "Sample artwork in landing animation",
+    "Landing introduction describes the existing ukiyo-e samples",
+    "No historical testimonials",
+    "EUR demo currency"
+  ],
+  "samples": [
+    {
+      "key": "sample-ola",
+      "title": "The Great Wave",
+      "artist": "Katsushika Hokusai",
+      "year": "1831",
+      "sourceAsset": "05_brand/camisetas/ola.png",
+      "sourceSha256": "391d98bc8a241c6ac58e8bfb459da496699545129ba15dbcf7a2840f2c3875ff"
+    },
+    {
+      "key": "sample-fuji-rojo",
+      "title": "Red Fuji",
+      "artist": "Katsushika Hokusai",
+      "year": "c. 1831",
+      "sourceAsset": "05_brand/camisetas/fuji-rojo.png",
+      "sourceSha256": "bbc2339d6c67eaa8ca6f75e325cf1e155925e0d68301042a6176180151c2a5a1"
+    },
+    {
+      "key": "sample-lluvia",
+      "title": "Sudden Shower",
+      "artist": "Utagawa Hiroshige",
+      "year": "1857",
+      "sourceAsset": "05_brand/camisetas/lluvia.png",
+      "sourceSha256": "2a705500d3c18baed9b6e485e02d4c1093cb8322de86772c8a7f94dc00bd7456"
+    },
+    {
+      "key": "sample-ciruelo",
+      "title": "Plum Garden",
+      "artist": "Utagawa Hiroshige",
+      "year": "1857",
+      "sourceAsset": "05_brand/camisetas/ciruelo.png",
+      "sourceSha256": "2a35353a8798d0201d30b13c6a45cc752bc02e774c5be77dc77386eb6d5f713f"
+    },
+    {
+      "key": "sample-mishima",
+      "title": "Mishima Pass",
+      "artist": "Katsushika Hokusai",
+      "year": "c. 1831",
+      "sourceAsset": "05_brand/camisetas/mishima.png",
+      "sourceSha256": "61926640294db80da6afd156df6a0a31bad42491cf11a28ad35a9d46bfd736f8"
+    },
+    {
+      "key": "sample-tormenta",
+      "title": "Storm below the Summit",
+      "artist": "Katsushika Hokusai",
+      "year": "c. 1831",
+      "sourceAsset": "05_brand/camisetas/tormenta.png",
+      "sourceSha256": "0c64141c5a8e3c5a8993d2ab94565af05531e8a29e79ec03114613a80aa568a9"
+    }
+  ]
+}

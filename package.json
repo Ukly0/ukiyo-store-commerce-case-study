@@ -1,0 +1,12 @@
+{
+  "name": "ukiyo-store-commerce-case-study",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "python -m http.server 18782 --bind 127.0.0.1 --directory docs",
+    "capture": "node scripts/capture.mjs",
+    "record": "node scripts/record-walkthrough.mjs",
+    "test": "node scripts/check-presentation.mjs"
+  },
+  "devDependencies": { "playwright": "1.63.0" }
+}

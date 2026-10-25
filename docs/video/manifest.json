@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-25T09:58:42.770Z",
+  "type": "continuous-browser-recording",
+  "source": "Latest reviewed Angular frontend running locally with the six project-supplied t-shirt samples and Firebase emulators. Explicit sample catalogue and prices, not historical Firebase records.",
+  "processing": "Scaled and transcoded only. No fabricated frames, cuts or composited controls. Silent recording.",
+  "events": [
+    {
+      "atSeconds": 1.89,
+      "action": "Catalogue loaded"
+    },
+    {
+      "atSeconds": 3.95,
+      "action": "Search isolates The Great Wave project sample"
+    },
+    {
+      "atSeconds": 5.53,
+      "action": "Product opened from search result"
+    },
+    {
+      "atSeconds": 6.74,
+      "action": "Size M and colour White selected"
+    },
+    {
+      "atSeconds": 9.34,
+      "action": "Real mini-cart opened after adding the product"
+    },
+    {
+      "atSeconds": 10.91,
+      "action": "Cart reviewed; no payment submitted"
+    }
+  ],
+  "errors": []
+}
