@@ -1,35 +1,54 @@
 # Ukiyo Store — commerce case study
 
-A visual case study of an apparel storefront built in two stages: a WordPress/WooCommerce shop and a custom Angular frontend for the same catalogue.
+A visual case study of an apparel storefront built in two stages: a WordPress/WooCommerce shop and a custom Angular frontend for the same 74-product catalogue.
 
-The study follows the shopping journey — discovery, search and filters, product variants, cart and responsive behaviour — using the project's six ukiyo-e sample shirts. Products, prices and variants are demo data.
+The study covers discovery, search and filters, product variants, cart and responsive behaviour, using the store's existing catalogue and product imagery.
 
-![Angular storefront](docs/images/runtime/angular-home.webp)
+![Ukiyo Store cover](docs/images/ukiyo-store-cover.png)
 
-## View the case study
+## Visual gallery
 
-The full presentation is in [`docs/index.html`](docs/index.html): platform comparison, interactive journey, desktop and mobile captures, design decisions and the evidence behind them.
+### WordPress + WooCommerce
 
-```sh
-npm install
-npm run preview
-```
+![WordPress homepage](docs/images/wordpress-responsive-hero.png)
 
-Open **http://127.0.0.1:18782**. The presentation is static; it does not need a frontend build or external APIs.
+*Desktop and mobile composition of the homepage: original Astra/Elementor layout, “BE JAPAN” hero, navigation and product sections.*
+
+![WordPress catalogue](docs/images/store-wordpress.png)
+
+*Catalogue with uniform product cards, shorter titles and WooCommerce variations.*
+
+| Categories | Collection |
+| --- | --- |
+| ![Category navigation](docs/images/wordpress-responsive-categorias.png) | ![Collection section](docs/images/wordpress-responsive-coleccion.png) |
+
+| Products | Brand |
+| --- | --- |
+| ![Product section](docs/images/wordpress-responsive-productos.png) | ![Brand section](docs/images/wordpress-responsive-marca.png) |
+
+### Angular + Firebase / Express
+
+![Angular catalogue](docs/images/store-angular-catalog.png)
+
+*Catalogue with 74 products, live search, category and theme filters, and product cards.*
+
+![Angular product](docs/images/store-angular-product.png)
+
+*Product page with size and colour selection, price and Add to Cart.*
 
 ## What it covers
 
 ### WordPress + WooCommerce
 
-Brand-led merchandising with Astra and Elementor, product configuration and a guest cart handled by WooCommerce. The catalogue uses the same six sample shirts as the Angular application.
+Brand-led merchandising with Astra and Elementor, a refined 74-product catalogue, product variations and a guest cart handled by WooCommerce.
 
 ### Angular + Firebase / Express
 
-A custom storefront with live search, category and theme filters, product variants, a Firebase-backed cart, authentication and admin routes, and an Express checkout service. The local edition runs against Firebase emulators with the sample catalogue.
+A custom storefront with live search, category and theme filters, product variants, a Firebase-backed cart, authentication and admin routes, and an Express checkout service. The local edition reads the catalogue and product media locally; the hosted Firebase catalogue is not part of this repository.
 
 ### Responsive behaviour
 
-Desktop and 390 × 844 mobile captures of the Angular catalogue, filters, product page and purchase action. The original mobile overflow is preserved; it is not a claim of WCAG conformance.
+Desktop and mobile compositions for the WordPress homepage, catalogue, categories, collection, products and brand sections. The mobile catalogue exposes the original horizontal clipping; it is not a WCAG conformance claim.
 
 ### Shopify
 
@@ -44,15 +63,25 @@ The presentation records Shopify as outside the scope of this case study. No imp
 | Application services | Firebase 9.9, AngularFire 7.4, Express 4.18, Stripe 10.17, Nodemailer 6.9 |
 | Presentation | Static HTML, CSS and JavaScript; Playwright for captures |
 
+## Interactive sample edition
+
+The repository also includes [`docs/index.html`](docs/index.html), a separate six-shirt sample edition that documents the complete search → variant → cart journey with fresh captures, a video walkthrough and responsive states. It is not the 74-product catalogue shown in the gallery above.
+
+```sh
+npm install
+npm run preview
+```
+
+Open **http://127.0.0.1:18782**. The presentation is static; it does not need a frontend build or external APIs.
+
 ## Repository layout
 
-- `docs/index.html` — the written and visual case study.
-- `docs/case-study.css`, `docs/case-study.js` — presentation layout and interactions.
-- `docs/images/runtime/` — browser captures and WebP derivatives.
-- `docs/video/` — the Angular search-to-cart walkthrough.
+- `docs/images/` — updated WordPress and Angular gallery assets.
+- `docs/images/runtime/` — captures for the six-shirt sample edition.
+- `docs/index.html` — the interactive sample edition.
 - `docs/capture-manifest.json` — capture metadata, viewports and interaction checks.
 - `docs/technical-notes.md` — local setup, architecture and capture details.
-- `docs/samples.md` — sample catalogue and version information.
+- `docs/samples.md` — six-shirt sample edition catalogue.
 - `scripts/` — capture, recording and presentation checks.
 - `package.json` — preview, capture, record and test commands.
 
@@ -62,11 +91,11 @@ The presentation records Shopify as outside the scope of this case study. No imp
 npm test
 ```
 
-The check covers image loading, chapter anchors, five viewport widths, horizontal overflow, journey tabs, keyboard navigation, the image dialog and the JavaScript-disabled fallback. It tests the presentation, not the legacy shops.
+The check covers image loading, chapter anchors, five viewport widths, horizontal overflow, journey tabs, keyboard navigation, the image dialog and the JavaScript-disabled fallback. It tests the sample edition, not the legacy shops.
 
 ## Capture the applications
 
-The capture scripts expect local WordPress and Angular instances on loopback, Firebase emulators and the six-sample catalogue. See [`docs/technical-notes.md`](docs/technical-notes.md) for the full setup.
+The capture scripts expect local WordPress and Angular instances on loopback, Firebase emulators and the six-shirt sample catalogue. See [`docs/technical-notes.md`](docs/technical-notes.md) for the full setup.
 
 ```sh
 npx playwright install chromium
@@ -79,7 +108,8 @@ Do not point the capture scripts at a production shop: they add a guest-cart ite
 
 ## Data and scope
 
-- The six shirt designs and their artwork were already part of the project. The catalogue, EUR prices and variants are demonstration data.
+- The gallery uses the updated local WordPress storefront and the 74-product Angular catalogue with the store's existing product imagery.
+- The six-shirt sample edition is a separate presentation fixture; products, prices and variants there are demonstration data.
 - The repository contains documentation, presentation assets and capture scripts. It does not contain the WordPress backup, database, credentials, original Angular source or Firebase export.
 - No revenue, conversion, traffic, customer count, production deployment, payment or email delivery is claimed.
 - WordPress, WooCommerce, Astra, Elementor, Angular, Firebase and Shopify are third-party products. Their development is not attributed to the author.
@@ -87,7 +117,8 @@ Do not point the capture scripts at a production shop: they add a guest-cart ite
 
 ## Documentation
 
-- [Full case study](docs/index.html)
+- [Visual gallery](#visual-gallery)
+- [Interactive sample edition](docs/index.html)
 - [Architecture and local setup](docs/technical-notes.md)
-- [Sample catalogue](docs/samples.md)
+- [Sample edition catalogue](docs/samples.md)
 - [Capture manifest](docs/capture-manifest.json)

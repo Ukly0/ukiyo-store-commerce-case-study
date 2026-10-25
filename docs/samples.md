@@ -1,4 +1,4 @@
-# Sample catalogue and version
+# Sample edition catalogue and version
 
 ## Frontend version
 
@@ -7,7 +7,7 @@
 - The application source is the June 2024 final-degree revision; later upstream changes are documentation updates.
 - The local build excludes production environment files, server credentials and historical demo-login hints.
 
-## The six sample shirts
+## The six sample edition shirts
 
 The artwork and shirt base already existed in the project's brand assets. No new shirt artwork was generated for this case study.
 

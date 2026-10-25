@@ -4,6 +4,8 @@
 
 The static case study, browser captures, a capture manifest and the scripts used to record and check the presentation. It does **not** contain the WordPress backup, SQL database, credentials, original Angular source, Firebase export or raw product-media library.
 
+The visual gallery uses the updated local WordPress storefront and the 74-product Angular catalogue. The interactive sample edition uses six shirts; sections labelled **sample edition** describe that separate setup.
+
 ## WordPress storefront
 
 ### Stack
@@ -23,7 +25,7 @@ The static case study, browser captures, a capture manifest and the scripts used
 
 ### Catalogue and cart
 
-The sample edition loads the six project shirts through WooCommerce's product and variation APIs. The capture workflow selects a product, chooses size and colour, submits the real product form, waits for confirmation and opens the resulting guest cart. No checkout is submitted.
+The gallery uses the updated 74-product catalogue with uniform cards, shorter titles and WooCommerce variations. The capture workflow below uses the six-shirt sample edition; it selects a product, chooses size and colour, submits the real product form, waits for confirmation and opens the resulting guest cart. No checkout is submitted.
 
 Storefront media dates and archive presence do not establish sales or current operation.
 
@@ -49,7 +51,8 @@ Storefront media dates and archive presence do not establish sales or current op
 - Install dependencies with scripts disabled and legacy peer dependency resolution.
 - Run the Angular development build. The build emits legacy CSS-import, autoprefixer and CommonJS warnings; this is not a claim of a clean production dependency audit or a historical test-suite pass.
 - Add local environment values and AngularFire `USE_EMULATOR` providers.
-- Use the project's six sample shirts for the catalogue and landing animation.
+- The gallery uses the local 74-product catalogue and product imagery.
+- The sample edition uses the project's six shirts for the catalogue and landing animation.
 - Do not include production environment files, server credentials or historical demo-account hints.
 - The local Firebase project uses database and auth emulators bound to loopback. The original hosted dataset is not part of this repository.
 
@@ -59,9 +62,9 @@ The sample products, EUR prices and variants are demonstration data, not histori
 
 The local presentation server applies a restrictive `connect-src` Content Security Policy allowing only local emulator connections. Browser automation allows only loopback and the public font/static-library origins required by the original UI. Stripe and the original hosted backend are not enabled. A payment button in the UI does not mean checkout was tested.
 
-## Sample catalogue
+## Sample edition catalogue
 
-The six shirts already existed in the project:
+The gallery uses the updated 74-product local catalogue. The interactive sample edition uses the six shirts that already existed in the project:
 
 | Sample | Artwork |
 | --- | --- |
@@ -76,9 +79,9 @@ The printed ukiyo-e works are public-domain material sourced through Wikimedia C
 
 Each sample supplies one front image. The Angular template reuses that view in its two image slots rather than fabricating a second photograph.
 
-## Capture workflow
+## Sample edition capture workflow
 
-Requirements: a local WordPress instance at `http://127.0.0.1:18780`, the Angular build at `http://127.0.0.1:18781`, Firebase emulators and the six-sample catalogue.
+Requirements: a local WordPress instance at `http://127.0.0.1:18780`, the Angular build at `http://127.0.0.1:18781`, Firebase emulators and the six-shirt sample catalogue.
 
 ```sh
 npm install
